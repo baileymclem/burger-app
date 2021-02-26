@@ -1,7 +1,23 @@
-
 body{
-    background-color: cornsilk;
-    color: black;
-    font-family: Arial, Helvetica, sans-serif;
+  background-color: coral;
 }
 
+li {
+    padding: 5px;
+    margin: 5px;
+    background: #faebd7;
+  }
+
+  .label {
+    font-weight: bold;
+  }
+
+  .create-update-form {
+    padding: 5px;
+    margin: 5px;
+    background: aqua;
+  }
+
+  .form-group {
+    margin-bottom: 5px;
+  }
