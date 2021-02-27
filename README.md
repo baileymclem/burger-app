@@ -29,9 +29,9 @@ Table of contents
 
 ## Deploy
 
-[Heroku link](https://shrouded-temple-77773.herokuapp.com/)
+[Heroku link](https://gentle-citadel-47579.herokuapp.com/)
 
-![!Demo](./assets/react-reading-demo.gif)
+![!Demo](./public/img/burgerdemo.gif)
 
 ## Contributing
 
