@@ -1,38 +1,38 @@
-$(function () {
-    $(".change-devoured").on("submit", function(event) {
-      var id = $(this).data("id");
-      var newDevoured = $(this).data("newdevoured");
+$(function() {
 
-      var newDevouredState = {
-        devoured: newDevoured
-      };
+$("#addBurger").on("click", (event) => {
+  event.preventDefault();
 
-      // Send the PUT request.
-      $.ajax("/api/burgers/" + id, {
-        type: "PUT",
-        data: newDevouredState
-      }).then(
-        function() {
-          console.log("changed devovr to", newDevoured);
-          // Reload the page to get the updated list
-          location.reload();
-        }
-      );
-    });
+  const burgerName = {
+    name: $("#newBurger").val().trim(),
+  };
 
-  $(".create-form").on("submit", function (event) {
-    event.preventDefault();
+  console.log("bname", burgerName);
 
-    var newBurger = {
-      name: $("#bur").val().trim()
-    };
-
-    $.ajax("/api/burgers", {
-      type: "POST",
-      data: newBurger,
-    }).then(function () {
-      console.log("created new burger!");
-      location.reload();
-    });
+  $.ajax({
+    url: "/api/burger",
+    method: "POST",
+    data: burgerName,
+  }).then(() => {
+    location.reload();
   });
+});
+
+$("#devoured").on("click", (event) => {
+  event.preventDefault();
+
+  const burgerId = {
+    id: $(event.target).data("id"),
+  };
+
+  console.log("id", burgerId);
+
+  $.ajax({
+    url: "/api/devoured",
+    method: "PUT",
+    data: burgerId,
+  }).then(() => {
+    location.reload();
+  });
+});
 });

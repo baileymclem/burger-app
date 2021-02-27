@@ -12,17 +12,13 @@ var burgers = {
       cb(res);
     });
   },
+
+
   updateOne: function (id, cb) {
-    var condition = "id =" + id;
-    orm.updateOne("burgers", {devoured: true}, condition, function (res) {
+    orm.updateOne("burgers", "devoured", true, id,function (res) {
       cb(res);
     });
   },
-  //   delete: function(condition, cb) {
-  //     orm.delete("burgers", condition, function(res) {
-  //       cb(res);
-  //     });
-  //   }
 };
 
 module.exports = burgers;
